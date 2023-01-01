@@ -1,0 +1,730 @@
+{
+  "mod_elements": [
+    {
+      "name": "OakBark",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "BarkTab",
+      "type": "tab",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bark_tab"
+    },
+    {
+      "name": "AcaciaBark",
+      "type": "item",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "BirchBark",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "CrimsonBark",
+      "type": "item",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crimson_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "DarkOakBark",
+      "type": "item",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "JungleBark",
+      "type": "item",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "SpruceBark",
+      "type": "item",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "WarpedBark",
+      "type": "item",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "warped_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "GettingBark",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "getting_bark",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AcaciaUse",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "BirchUse",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "CrimsonUse",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crimson_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "DarkOakUse",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "JungleUse",
+      "type": "procedure",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "OakUse",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SpruceUse",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "WarpedUse",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "warped_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "BarkTag",
+      "type": "tag",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bark_tag"
+    },
+    {
+      "name": "AcaciaFuel",
+      "type": "itemextension",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "BirchFuel",
+      "type": "itemextension",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "DarkOakFuel",
+      "type": "itemextension",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "JungleFuel",
+      "type": "itemextension",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "OakFuel",
+      "type": "itemextension",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "SpruceFuel",
+      "type": "itemextension",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "OakBarkBlock",
+      "type": "block",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "oak_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "SpruceBarkBlock",
+      "type": "block",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spruce_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "BirchBarkBlock",
+      "type": "block",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "birch_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "JungleBarkBlock",
+      "type": "block",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "jungle_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "AcaciaBarkBlock",
+      "type": "block",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "acacia_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "DarkOakBarkBlock",
+      "type": "block",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "dark_oak_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "CrimsonBarkBlock",
+      "type": "block",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "crimson_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "WarpedBarkBlock",
+      "type": "block",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "warped_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "OakBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "oak_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
+      "name": "AcaciaBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "acacia_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
+      "name": "BirchBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "birch_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
+      "name": "CrimsonBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "crimson_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
+      "name": "DarkOakBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "dark_oak_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
+      "name": "JungleBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "jungle_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
+      "name": "SpruceBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spruce_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
+      "name": "WarpedBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "warped_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
+      "name": "PaperRecipe",
+      "type": "recipe",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "paper_recipe",
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AcaciaBlockFuel",
+      "type": "itemextension",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_block_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "BirchBlockFuel",
+      "type": "itemextension",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_block_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "DarkOakBlockFuel",
+      "type": "itemextension",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_block_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "JungleBlockFuel",
+      "type": "itemextension",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_block_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "OakBlockFuel",
+      "type": "itemextension",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_block_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "SpruceBlockFuel",
+      "type": "itemextension",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_block_fuel",
+      "path": "~/Fuel"
+    },
+    {
+      "name": "TCAxe",
+      "type": "tag",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "tc_axe"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.treebark.jungle_bark": "Jungle Bark",
+      "item.treebark.dark_oak_bark": "Dark Oak Bark",
+      "item.treebark.crimson_bark": "Crimson Bark",
+      "itemGroup.tabbark_tab": "Bark Tab",
+      "item.treebark.warped_bark": "Warped Bark",
+      "item.treebark.birch_bark": "Birch Bark",
+      "block.treebark.spruce_bark_block": "Spruce Bark Block",
+      "item.treebark.oak_bark": "Oak Bark",
+      "block.treebark.birch_bark_block": "Birch Bark Block",
+      "block.treebark.acacia_bark_block": " Acacia Bark Block",
+      "block.treebark.crimson_bark_block": "Crimson Bark Block",
+      "block.treebark.warped_bark_block": "Warped Bark Block",
+      "item.treebark.acacia_bark": "Acacia Bark",
+      "item.treebark.spruce_bark": "Spruce Bark",
+      "block.treebark.oak_bark_block": "Oak Bark Block",
+      "block.treebark.jungle_bark_block": "Jungle Bark Block",
+      "block.treebark.dark_oak_bark_block": "Dark Oak Bark Block"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Bark",
+        "children": []
+      },
+      {
+        "name": "Procedures",
+        "children": []
+      },
+      {
+        "name": "Fuel",
+        "children": []
+      },
+      {
+        "name": "BarkBlocks",
+        "children": []
+      },
+      {
+        "name": "Recipes",
+        "children": [
+          {
+            "name": "BarkBlocks",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "treebark",
+    "modName": "TreeBark+",
+    "version": "2.0.0",
+    "author": "Nico_44, Let\u0027s Code",
+    "websiteURL": "https://nico44yt.github.io/",
+    "license": "GNU General Public License version 3 (GPLv3)",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "modPicture": "treebarkbanner",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "credits": "TreeBark+ 1.16.5",
+    "modElementsPackage": "net.letscode.treebark",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200344708
+}
