@@ -1,0 +1,11 @@
+{
+  "_fv": 34,
+  "_type": "tab",
+  "definition": {
+    "name": "Bark Tab",
+    "icon": {
+      "value": "CUSTOM:OakBark"
+    },
+    "showSearch": false
+  }
+}
