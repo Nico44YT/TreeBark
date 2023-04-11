@@ -1,0 +1,21 @@
+{
+  "item.treebark.jungle_bark": "Jungle Bark",
+  "item.treebark.dark_oak_bark": "Dark Oak Bark",
+  "item.treebark.crimson_bark": "Crimson Bark",
+  "item.treebark.mangrove_bark": "Mangrove Bark",
+  "itemGroup.treebark.bark_tab": "Bark Tab",
+  "item.treebark.warped_bark": "Warped Bark",
+  "item.treebark.birch_bark": "Birch Bark",
+  "block.treebark.spruce_bark_block": "Spruce Bark Block",
+  "item.treebark.oak_bark": "Oak Bark",
+  "block.treebark.birch_bark_block": "Birch Bark Block",
+  "block.treebark.acacia_bark_block": " Acacia Bark Block",
+  "block.treebark.crimson_bark_block": "Crimson Bark Block",
+  "block.treebark.warped_bark_block": "Warped Bark Block",
+  "item.treebark.acacia_bark": "Acacia Bark",
+  "item.treebark.spruce_bark": "Spruce Bark",
+  "block.treebark.mangrove_bark_block": "Mangrove Bark Block",
+  "block.treebark.oak_bark_block": "Oak Bark Block",
+  "block.treebark.jungle_bark_block": "Jungle Bark Block",
+  "block.treebark.dark_oak_bark_block": "Dark Oak Bark Block"
+}

@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "treebark",
+	"version": "${version}",
+	"name": "TreeBark+",
+	"description": "TreeBark+ mod lets players obtain bark from stripping logs to reapply them on stripped logs.",
+	"authors": [
+		"Let's Code, Nico_44"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": ""
+	},
+	"license": "MIT",
+	"icon": "assets/treebark/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.letscode.TreeBark"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19/~1.19.1",
+		"java": ">=17",
+		"fabric": "*"
+	}
+}
