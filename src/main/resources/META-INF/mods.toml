@@ -1,12 +1,12 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[37,)"
 license="GNU General Public License version 3 (GPLv3)"
 
 [[mods]]
 modId="treebark"
 version="2.0.0"
 displayName="TreeBark+"
-credits="TreeBark+ 1.16.5"
+credits="TreeBark+ 1.17.1"
 displayURL="https://nico44yt.github.io/"
 logoFile="logo.png"
 authors="Nico_44, Let's Code"
@@ -14,7 +14,7 @@ authors="Nico_44, Let's Code"
 [[dependencies.treebark]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5]"
+    versionRange="[1.17.1]"
     ordering="NONE"
     side="BOTH"
 

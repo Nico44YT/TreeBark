@@ -3,174 +3,123 @@ package net.letscode.treebark.procedures;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.GameType;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Hand;
-import net.minecraft.state.Property;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BlockState;
 
-import net.letscode.treebark.item.BirchBarkItem;
-import net.letscode.treebark.TreebarkMod;
+import net.letscode.treebark.init.TreebarkModItems;
 
 import java.util.Map;
-import java.util.HashMap;
 
+@Mod.EventBusSubscriber
 public class BirchUseProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-			PlayerEntity entity = event.getPlayer();
-			if (event.getHand() != entity.getActiveHand()) {
-				return;
-			}
-			double i = event.getPos().getX();
-			double j = event.getPos().getY();
-			double k = event.getPos().getZ();
-			IWorld world = event.getWorld();
-			BlockState state = world.getBlockState(event.getPos());
-			Map<String, Object> dependencies = new HashMap<>();
-			dependencies.put("x", i);
-			dependencies.put("y", j);
-			dependencies.put("z", k);
-			dependencies.put("world", world);
-			dependencies.put("entity", entity);
-			dependencies.put("direction", event.getFace());
-			dependencies.put("blockstate", state);
-			dependencies.put("event", event);
-			executeProcedure(dependencies);
-		}
+	@SubscribeEvent
+	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+		if (event.getHand() != event.getPlayer().getUsedItemHand())
+			return;
+		execute(event, event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getPlayer());
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				TreebarkMod.LOGGER.warn("Failed to load dependency world for procedure BirchUse!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		execute(null, world, x, y, z, entity);
+	}
+
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				TreebarkMod.LOGGER.warn("Failed to load dependency x for procedure BirchUse!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				TreebarkMod.LOGGER.warn("Failed to load dependency y for procedure BirchUse!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				TreebarkMod.LOGGER.warn("Failed to load dependency z for procedure BirchUse!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				TreebarkMod.LOGGER.warn("Failed to load dependency entity for procedure BirchUse!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == BirchBarkItem.block
-				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-						.getItem() == BirchBarkItem.block)
-				&& ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STRIPPED_BIRCH_LOG
-						|| (world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STRIPPED_BIRCH_WOOD)) {
-			if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STRIPPED_BIRCH_LOG) {
+		if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.BIRCH_BARK
+				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.BIRCH_BARK)
+				&& ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STRIPPED_BIRCH_LOG
+						|| (world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STRIPPED_BIRCH_WOOD)) {
+			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STRIPPED_BIRCH_LOG) {
 				{
-					BlockPos _bp = new BlockPos(x, y, z);
-					BlockState _bs = Blocks.BIRCH_LOG.getDefaultState();
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					BlockState _bs = Blocks.BIRCH_LOG.defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.get(_property) != null)
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
-			} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STRIPPED_BIRCH_WOOD) {
+			} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STRIPPED_BIRCH_WOOD) {
 				{
-					BlockPos _bp = new BlockPos(x, y, z);
-					BlockState _bs = Blocks.BIRCH_WOOD.getDefaultState();
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					BlockState _bs = Blocks.BIRCH_WOOD.defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.get(_property) != null)
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
 			}
-			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getItem() == BirchBarkItem.block) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.BIRCH_BARK) {
 				if (!(new Object() {
 					public boolean checkGamemode(Entity _ent) {
-						if (_ent instanceof ServerPlayerEntity) {
-							return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
-						} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
-							NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-									.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
-							return _npi != null && _npi.getGameType() == GameType.CREATIVE;
+						if (_ent instanceof ServerPlayer _serverPlayer) {
+							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+						} else if (_ent.level.isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft
+									.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
 						}
 						return false;
 					}
 				}.checkGamemode(entity))) {
-					(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).shrink((int) 1);
+					((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).shrink(1);
 				}
-				if (entity instanceof LivingEntity) {
-					((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
-				}
-			} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-					.getItem() == BirchBarkItem.block) {
+				if (entity instanceof LivingEntity _entity)
+					_entity.swing(InteractionHand.MAIN_HAND, true);
+			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)
+					.getItem() == TreebarkModItems.BIRCH_BARK) {
 				if (!(new Object() {
 					public boolean checkGamemode(Entity _ent) {
-						if (_ent instanceof ServerPlayerEntity) {
-							return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
-						} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
-							NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-									.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
-							return _npi != null && _npi.getGameType() == GameType.CREATIVE;
+						if (_ent instanceof ServerPlayer _serverPlayer) {
+							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+						} else if (_ent.level.isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft
+									.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
 						}
 						return false;
 					}
 				}.checkGamemode(entity))) {
-					(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)).shrink((int) 1);
+					((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).shrink(1);
 				}
-				if (entity instanceof LivingEntity) {
-					((LivingEntity) entity).swing(Hand.OFF_HAND, true);
-				}
+				if (entity instanceof LivingEntity _entity)
+					_entity.swing(InteractionHand.OFF_HAND, true);
 			}
-			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos(x, y, z),
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")),
-						SoundCategory.BLOCKS, (float) 1, (float) 1);
-			} else {
-				((World) world).playSound(x, y, z,
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")),
-						SoundCategory.BLOCKS, (float) 1, (float) 1, false);
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")), SoundSource.BLOCKS, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")), SoundSource.BLOCKS,
+							1, 1, false);
+				}
 			}
 		}
 	}

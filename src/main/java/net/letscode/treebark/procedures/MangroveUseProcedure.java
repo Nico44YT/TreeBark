@@ -28,7 +28,7 @@ import net.letscode.treebark.init.TreebarkModItems;
 import java.util.Map;
 
 @Mod.EventBusSubscriber
-public class WarpedUseProcedure {
+public class MangroveUseProcedure {
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getHand() != event.getPlayer().getUsedItemHand())
@@ -43,14 +43,14 @@ public class WarpedUseProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.WARPED_BARK
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.WARPED_BARK)
-				&& ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STRIPPED_WARPED_STEM
-						|| (world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STRIPPED_WARPED_HYPHAE)) {
-			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STRIPPED_WARPED_STEM) {
+		if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.MANGROVE_BARK
+				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.MANGROVE_BARK)
+				&& ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.AIR
+						|| (world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.AIR)) {
+			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.AIR) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Blocks.WARPED_STEM.defaultBlockState();
+					BlockState _bs = Blocks.AIR.defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
@@ -62,10 +62,10 @@ public class WarpedUseProcedure {
 					}
 					world.setBlock(_bp, _bs, 3);
 				}
-			} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STRIPPED_WARPED_HYPHAE) {
+			} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.AIR) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Blocks.WARPED_HYPHAE.defaultBlockState();
+					BlockState _bs = Blocks.AIR.defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
@@ -78,7 +78,7 @@ public class WarpedUseProcedure {
 					world.setBlock(_bp, _bs, 3);
 				}
 			}
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.WARPED_BARK) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TreebarkModItems.MANGROVE_BARK) {
 				if (!(new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -95,7 +95,7 @@ public class WarpedUseProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.swing(InteractionHand.MAIN_HAND, true);
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)
-					.getItem() == TreebarkModItems.WARPED_BARK) {
+					.getItem() == TreebarkModItems.MANGROVE_BARK) {
 				if (!(new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {

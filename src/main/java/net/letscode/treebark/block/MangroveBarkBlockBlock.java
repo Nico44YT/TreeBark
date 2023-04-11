@@ -29,13 +29,13 @@ import net.minecraft.core.BlockPos;
 import java.util.List;
 import java.util.Collections;
 
-public class JungleBarkBlockBlock extends Block implements SimpleWaterloggedBlock
+public class MangroveBarkBlockBlock extends Block implements SimpleWaterloggedBlock
 
 {
 	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	public JungleBarkBlockBlock() {
+	public MangroveBarkBlockBlock() {
 		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(WATERLOGGED, false));

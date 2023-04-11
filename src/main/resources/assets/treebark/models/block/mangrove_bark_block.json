@@ -1,0 +1,11 @@
+{
+  "parent": "treebark:custom/barkblock",
+  "textures": {
+    "all": "minecraft:block/mangrove_log",
+    "particle": "minecraft:block/mangrove_log",
+    "0": "minecraft:block/mangrove_log",
+    "1": "minecraft:block/mangrove_log_top",
+    "missing": "treebark:block/"
+  },
+  "render_type": "solid"
+}

@@ -439,6 +439,57 @@
       "path": "~/Fuel"
     },
     {
+      "name": "MangroveBark",
+      "type": "item",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_bark",
+      "path": "~/Bark"
+    },
+    {
+      "name": "MangroveUse",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_use",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "MangroveFuel",
+      "type": "itemextension",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_fuel",
+      "path": "~/Fuel"
+    },
+    {
       "name": "OakBarkBlock",
       "type": "block",
       "sortid": 10,
@@ -490,6 +541,15 @@
       "compiles": true,
       "locked_code": true,
       "registry_name": "dark_oak_bark_block",
+      "path": "~/BarkBlocks"
+    },
+    {
+      "name": "MangroveBarkBlock",
+      "type": "block",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mangrove_bark_block",
       "path": "~/BarkBlocks"
     },
     {
@@ -583,6 +643,15 @@
       "path": "~/Recipes/BarkBlocks"
     },
     {
+      "name": "MangroveBarkBlockRecipe",
+      "type": "recipe",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mangrove_bark_block_recipe",
+      "path": "~/Recipes/BarkBlocks"
+    },
+    {
       "name": "PaperRecipe",
       "type": "recipe",
       "sortid": 47,
@@ -646,12 +715,13 @@
       "path": "~/Fuel"
     },
     {
-      "name": "TCAxe",
-      "type": "tag",
+      "name": "MangroveBlockFuel",
+      "type": "itemextension",
       "sortid": 54,
       "compiles": true,
-      "locked_code": true,
-      "registry_name": "tc_axe"
+      "locked_code": false,
+      "registry_name": "mangrove_block_fuel",
+      "path": "~/Fuel"
     }
   ],
   "variable_elements": [],
@@ -661,6 +731,7 @@
       "item.treebark.jungle_bark": "Jungle Bark",
       "item.treebark.dark_oak_bark": "Dark Oak Bark",
       "item.treebark.crimson_bark": "Crimson Bark",
+      "item.treebark.mangrove_bark": "Mangrove Bark",
       "itemGroup.tabbark_tab": "Bark Tab",
       "item.treebark.warped_bark": "Warped Bark",
       "item.treebark.birch_bark": "Birch Bark",
@@ -672,6 +743,7 @@
       "block.treebark.warped_bark_block": "Warped Bark Block",
       "item.treebark.acacia_bark": "Acacia Bark",
       "item.treebark.spruce_bark": "Spruce Bark",
+      "block.treebark.mangrove_bark_block": "Mangrove Bark Block",
       "block.treebark.oak_bark_block": "Oak Bark Block",
       "block.treebark.jungle_bark_block": "Jungle Bark Block",
       "block.treebark.dark_oak_bark_block": "Dark Oak Bark Block"
@@ -721,8 +793,8 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.16.5",
-    "credits": "TreeBark+ 1.16.5",
+    "currentGenerator": "forge-1.17.1",
+    "credits": "TreeBark+ 1.17.1",
     "modElementsPackage": "net.letscode.treebark",
     "lockBaseModFiles": false
   },
