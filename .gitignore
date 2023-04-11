@@ -1,0 +1,15 @@
+# git
+.git/
+.gradle/
+
+# mcreator
+.mcreator/
+.settings/
+build/
+run/
+
+# java
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr

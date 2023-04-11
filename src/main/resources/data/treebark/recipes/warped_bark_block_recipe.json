@@ -1,0 +1,68 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "00 ",
+    "00 ",
+    "   "
+  ],
+  "key": {
+    "0": {
+      "item": "treebark:warped_bark"
+    }
+  },
+  "result": {
+    "item": "treebark:warped_bark_block",
+    "count": 1
+  }
+},
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 00",
+    " 00",
+    "   "
+  ],
+  "key": {
+    "0": {
+      "item": "treebark:warped_bark"
+    }
+  },
+  "result": {
+    "item": "treebark:warped_bark_block",
+    "count": 1
+  }
+},
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "00 ",
+    "00 "
+  ],
+  "key": {
+    "0": {
+      "item": "treebark:warped_bark"
+    }
+  },
+  "result": {
+    "item": "treebark:warped_bark_block",
+    "count": 1
+  }
+},
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " 00",
+    " 00"
+  ],
+  "key": {
+    "0": {
+      "item": "treebark:warped_bark"
+    }
+  },
+  "result": {
+    "item": "treebark:warped_bark_block",
+    "count": 1
+  }
+}

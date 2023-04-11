@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "treebark:oak_bark",
+    "treebark:warped_bark",
+    "treebark:birch_bark",
+    "treebark:crimson_bark",
+    "treebark:jungle_bark",
+    "treebark:dark_oak_bark",
+    "treebark:spruce_bark",
+    "treebark:acacia_bark",
+    "treebark:mangrove_bark"
+  ]
+}
