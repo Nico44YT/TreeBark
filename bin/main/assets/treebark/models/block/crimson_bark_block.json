@@ -1,0 +1,11 @@
+{
+  "parent": "treebark:custom/barkblock",
+  "textures": {
+    "all": "minecraft:block/crimson_stem",
+    "particle": "minecraft:block/crimson_stem",
+    "0": "minecraft:block/crimson_stem",
+    "1": "minecraft:block/crimson_stem_top",
+    "missing": "treebark:block/"
+  },
+  "render_type": "solid"
+}

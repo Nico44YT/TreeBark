@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "treebark:block/jungle_bark_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "treebark:block/jungle_bark_block"
+    },
+    "axis=z": {
+      "model": "treebark:block/jungle_bark_block",
+      "x": 90
+    }
+  }
+}
