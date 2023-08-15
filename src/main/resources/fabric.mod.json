@@ -3,19 +3,23 @@
 	"id": "treebark",
 	"version": "${version}",
 	"name": "TreeBark+",
-	"description": "Tree Bark+ adds bark for all Vanilla Trees, so you can re-apply it later. Bark can be used as a simple/short fuel-source for the furnace.",
+	"description": "TreeBark+ mod lets players obtain bark from stripping logs to reapply them on stripped logs.",
 	"authors": [
 		"Let's Code, Nico_44"
 	],
 	"contact": {
-		"sources": "https://github.com/Nico44YT/TreeBark"
+		"homepage": "https://fabricmc.net/",
+		"sources": ""
 	},
-	"license": "GPL-3.0",
+	"license": "MIT",
 	"icon": "assets/treebark/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"treebark": [
-			"com.letscode.TreeBark"
+		"main": [
+          "net.letscode.treebark.TreeBark"
+		],
+		"fabric-datagen": [
+			"net.letscode.treebark.datagen.DataGen"
 		]
 	},
 	"depends": {
