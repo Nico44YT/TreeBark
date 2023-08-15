@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "treebark",
+	"version": "${version}",
+	"name": "TreeBark+",
+	"description": "TreeBark+ enables players to acquire bark by removing it from logs, which can then be reapplied to stripped logs.",
+	"authors": [
+		"Let's Code, Nico_44"
+	],
+	"contact": {
+		"homepage": "https://linktr.ee/nico_44",
+		"sources": "https://github.com/Nico44YT/TreeBark/tree/1.19-fabric"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/treebark/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "net.letscode.treebark.TreeBark"
+		],
+		"fabric-datagen": [
+			"net.letscode.treebark.datagen.DataGen"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19",
+		"java": ">=17",
+		"fabric": "*"
+	}
+}
