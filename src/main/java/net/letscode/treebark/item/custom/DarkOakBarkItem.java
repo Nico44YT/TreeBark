@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class DarkOakBarkItem extends Item {
 
     public DarkOakBarkItem(Settings settings) {
-        super(settings.group(ModItemGroup.TREEBARK));
+        super(settings);
     }
 
     @Override

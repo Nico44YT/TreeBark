@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class BirchBarkItem extends Item {
 
     public BirchBarkItem(Settings settings) {
-        super(settings.group(ModItemGroup.TREEBARK));
+        super(settings);
     }
 
     @Override

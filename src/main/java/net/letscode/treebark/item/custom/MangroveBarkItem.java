@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class MangroveBarkItem extends Item {
 
     public MangroveBarkItem(Settings settings) {
-        super(settings.group(ModItemGroup.TREEBARK));
+        super(settings);
     }
 
     @Override

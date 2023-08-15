@@ -1,11 +1,14 @@
 package net.letscode.treebark.item;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.letscode.treebark.TreeBark;
 import net.letscode.treebark.item.custom.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.Registries;
 
 public class ModItems {
 
@@ -21,10 +24,18 @@ public class ModItems {
 
 
     private static Item registerItem(String name, Item item){
-        return Registry.register(Registry.ITEM, new Identifier(TreeBark.MOD_ID, name), item);
+        addToItemGroup(ModItemGroup.TREEBARK, item);
+        return Registry.register(Registries.ITEM, new Identifier(TreeBark.MOD_ID, name), item);
+    }
+
+
+    public static void addToItemGroup(ItemGroup group, Item item) {
+        ItemGroupEvents.modifyEntriesEvent(group).register(content -> {
+            content.add(item);
+        });
     }
 
     public static void registerModItems() {
-        TreeBark.LOGGER.debug("Registering Mod Items for {}", TreeBark.MOD_ID);
+        TreeBark.LOGGER.debug("Registering Mod Items for %s", TreeBark.MOD_ID);
     }
 }

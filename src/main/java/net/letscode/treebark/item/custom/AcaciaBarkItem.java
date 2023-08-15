@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class AcaciaBarkItem extends Item {
 
     public AcaciaBarkItem(Settings settings) {
-        super(settings.group(ModItemGroup.TREEBARK));
+        super(settings);
     }
 
     @Override

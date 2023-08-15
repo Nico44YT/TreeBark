@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class SpruceBarkItem extends Item {
 
     public SpruceBarkItem(Settings settings) {
-        super(settings.group(ModItemGroup.TREEBARK));
+        super(settings);
     }
 
     @Override

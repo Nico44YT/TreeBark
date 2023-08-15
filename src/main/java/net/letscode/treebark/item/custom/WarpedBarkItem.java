@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class WarpedBarkItem extends Item {
 
     public WarpedBarkItem(Settings settings) {
-        super(settings.group(ModItemGroup.TREEBARK));
+        super(settings);
     }
 
     @Override

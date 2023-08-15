@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "treebark:items/acacia_bark"
+    "layer0": "treebark:item/acacia_bark"
   }
 }

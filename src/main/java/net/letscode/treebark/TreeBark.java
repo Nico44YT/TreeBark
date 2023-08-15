@@ -1,5 +1,6 @@
 package net.letscode.treebark;
 
+import net.letscode.treebark.item.ModItemGroup;
 import net.letscode.treebark.item.ModItems;
 import net.letscode.treebark.registries.ModRegistry;
 import net.fabricmc.api.ModInitializer;
@@ -14,6 +15,8 @@ public class TreeBark implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroup.registerItemGroup();
+
 		ModItems.registerModItems();
 
 		ModRegistry.registerModFuels();

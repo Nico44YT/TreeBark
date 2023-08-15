@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class CrimsonBarkItem extends Item {
 
     public CrimsonBarkItem(Settings settings) {
-        super(settings.group(ModItemGroup.TREEBARK));
+        super(settings);
     }
 
     @Override

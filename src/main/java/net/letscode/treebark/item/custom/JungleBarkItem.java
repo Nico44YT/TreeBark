@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class JungleBarkItem extends Item {
 
     public JungleBarkItem(Settings settings) {
-        super(settings.group(ModItemGroup.TREEBARK));
+        super(settings);
     }
 
     @Override
