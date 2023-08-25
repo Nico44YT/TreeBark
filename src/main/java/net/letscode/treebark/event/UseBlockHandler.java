@@ -21,7 +21,7 @@ public class UseBlockHandler implements UseBlockCallback {
         final BlockPos blockPos = hitResult.getBlockPos();
         final BlockState block = world.getBlockState(blockPos);
 
-        if(!player.isSpectator() && hand == Hand.MAIN_HAND){
+        if(!player.isSpectator() && hand == Hand.MAIN_HAND && player.canModifyBlocks()){
             if(player.getMainHandStack().getItem() instanceof AxeItemAccessor){
                 if(block.getBlock() == Blocks.ACACIA_LOG || block.getBlock() == Blocks.ACACIA_WOOD){
                     this.SpawnItem(world, player, blockPos, new ItemStack(ModItems.ACACIA_BARK));
