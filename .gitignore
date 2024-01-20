@@ -5,7 +5,6 @@ build/
 out/
 classes/
 src/main/generated/
-
 # eclipse
 
 *.launch
@@ -29,9 +28,8 @@ bin/
 
 *.DS_Store
 
-# fabric
-
 run/
+run-data/
 
 # java
 
