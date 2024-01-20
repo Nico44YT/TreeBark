@@ -2,9 +2,6 @@ package net.letscode.treebark.registries;
 
 import net.letscode.treebark.item.BarkReference;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -20,15 +20,22 @@ import java.util.HashMap;
 
 public class BarkItem extends Item {
     HashMap<ResourceLocation, ResourceLocation> map;
+    int burnTime = 60;
 
     public BarkItem(Properties settings, HashMap<ResourceLocation, ResourceLocation> map) {
         super(settings);
         this.map = map;
     }
 
+    public BarkItem(Properties settings, HashMap<ResourceLocation, ResourceLocation> map, int burnTime) {
+        super(settings);
+        this.map = map;
+        this.burnTime = burnTime;
+    }
+
     @Override
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-        return 60;
+        return burnTime;
     }
 
     @Override

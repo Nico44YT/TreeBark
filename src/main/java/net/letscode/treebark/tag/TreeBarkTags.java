@@ -10,7 +10,6 @@ public class TreeBarkTags {
     public static class Items {
         public static final TagKey<Item> BARK = tag("bark");
 
-
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(TreeBark.MOD_ID, name));
         }

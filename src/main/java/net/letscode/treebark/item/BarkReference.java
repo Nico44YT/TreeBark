@@ -1,11 +1,8 @@
 package net.letscode.treebark.item;
 
-
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class BarkReference {
     public HashMap<ResourceLocation, ResourceLocation> map;

@@ -12,7 +12,8 @@ public class TBCreativeTab {
         @Override
         public ItemStack makeIcon() {
             Random rand = new Random();
-            RegistryObject<Item> item = (RegistryObject<Item>) TBItems.ITEMS.getEntries().toArray()[rand.nextInt(0, TBItems.ITEMS.getEntries().size())];
+            int randomIndex = rand.nextInt(0, TBItems.ITEMS.getEntries().size());
+            RegistryObject<Item> item = (RegistryObject<Item>) TBItems.ITEMS.getEntries().toArray()[randomIndex];
             return new ItemStack(item.get());
         }
     };

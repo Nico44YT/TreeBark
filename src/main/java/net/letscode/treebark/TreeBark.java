@@ -12,9 +12,7 @@ import org.slf4j.Logger;
 
 @Mod(TreeBark.MOD_ID)
 public class TreeBark {
-
     public static final String MOD_ID = "treebark";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public TreeBark() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
