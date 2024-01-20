@@ -199,14 +199,13 @@ tasks.named('jar', Jar).configure {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
-
 }
 
-tasks.register("custom_unobfJar") {
+tasks.register("_unobfJar") {
     dependsOn 'jar'
 }
 
-tasks.register("custom_obfJar") {
+tasks.register("_obfJar") {
     dependsOn 'jar'
     finalizedBy 'reobfJar'
 }
