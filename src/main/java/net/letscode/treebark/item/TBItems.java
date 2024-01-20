@@ -17,6 +17,7 @@ public class TBItems {
     public static HashMap<ResourceLocation, RegistryObject<Item>> itemMap = new HashMap<ResourceLocation, RegistryObject<Item>>();
 
     public static void registerBarks() {
+
         for(int i = 0; i< BarkRegistry.references.size(); i++) {
             BarkReference reference = BarkRegistry.references.get(i);
 

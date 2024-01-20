@@ -47,6 +47,8 @@ public class BarkRegistry {
         WARPED_BLOCKS.put(new ResourceLocation("minecraft:stripped_warped_stem"), new ResourceLocation("minecraft:warped_stem"));
         WARPED_BLOCKS.put(new ResourceLocation("minecraft:stripped_warped_hyphae"), new ResourceLocation("minecraft:warped_hyphae"));
 
+
+
         references.add(new BarkReference(ACACIA_BLOCKS, "acacia_bark"));
         references.add(new BarkReference(BIRCH_BLOCKS, "birch_bark"));
         references.add(new BarkReference(CRIMSON_BLOCKS, "crimson_bark"));
