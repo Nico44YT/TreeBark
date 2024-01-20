@@ -1,7 +1,7 @@
 package net.letscode.treebark.event;
 
 import net.letscode.treebark.TreeBark;
-import net.letscode.treebark.item.ModItems;
+import net.letscode.treebark.item.TBItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.AxeItem;
@@ -16,13 +16,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 
 @Mod.EventBusSubscriber(modid = TreeBark.MOD_ID)
-public class ModEvent {
+public class TBEvent {
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         if(event.getItemStack().getItem() instanceof AxeItem) {
             Block base = event.getLevel().getBlockState(event.getPos()).getBlock();
-            if(ModItems.itemMap.containsKey(ForgeRegistries.BLOCKS.getKey(base))) {
-                spawnItem(event.getLevel(), event.getPos(), ModItems.itemMap.get(ForgeRegistries.BLOCKS.getKey(base)).get().asItem());
+            if(TBItems.itemMap.containsKey(ForgeRegistries.BLOCKS.getKey(base))) {
+                spawnItem(event.getLevel(), event.getPos(), TBItems.itemMap.get(ForgeRegistries.BLOCKS.getKey(base)).get().asItem());
             }
         }
     }
