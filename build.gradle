@@ -200,14 +200,13 @@ tasks.named('jar', Jar).configure {
         ])
     }
 
-    // This is the preferred method to reobfuscate your jar file
 }
 
-tasks.register("unobfJar") {
+tasks.register("custom_unobfJar") {
     dependsOn 'jar'
 }
 
-tasks.register("obfJar") {
+tasks.register("custom_obfJar") {
     dependsOn 'jar'
     finalizedBy 'reobfJar'
 }

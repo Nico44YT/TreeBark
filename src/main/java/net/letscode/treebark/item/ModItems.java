@@ -2,16 +2,17 @@ package net.letscode.treebark.item;
 
 import net.letscode.treebark.TreeBark;
 import net.letscode.treebark.registries.BarkRegistry;
+import net.letscode.treebark.tag.TreeBarkTags;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagEntry;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.rmi.registry.Registry;
 import java.util.HashMap;
 
 public class ModItems {
@@ -20,6 +21,7 @@ public class ModItems {
     public static HashMap<ResourceLocation, RegistryObject<Item>> itemMap = new HashMap<ResourceLocation, RegistryObject<Item>>();
 
     public static void registerBarks() {
+
         for(int i = 0; i< BarkRegistry.references.size(); i++) {
             BarkReference reference = BarkRegistry.references.get(i);
 
@@ -28,7 +30,6 @@ public class ModItems {
             for(ResourceLocation blockResourceLocation : reference.map.values()) {
                 itemMap.put(blockResourceLocation, barkItem);
             }
-
         }
     }
 

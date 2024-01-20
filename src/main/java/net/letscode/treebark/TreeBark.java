@@ -45,5 +45,4 @@ public class TreeBark {
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
-
 }

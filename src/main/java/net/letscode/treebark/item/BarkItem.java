@@ -1,5 +1,6 @@
 package net.letscode.treebark.item;
 
+import net.letscode.treebark.tag.TreeBarkTags;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -35,6 +36,7 @@ public class BarkItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
+
         if(!context.getLevel().isClientSide() && context.getHand() == InteractionHand.MAIN_HAND) {
 
             final BlockPos blockPos = new BlockPos(context.getClickedPos());
