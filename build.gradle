@@ -12,11 +12,9 @@ base {
 
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
+    maven {
+        url "https://cursemaven.com"
+    }
 }
 
 dependencies {
@@ -27,7 +25,7 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation files("./libs/liby-1.21.1-build-1.0.jar")
+    modImplementation "curse.maven:liby-1115157:5783866"
 
     implementation "org.reflections:reflections:${project.reflections_version}"
 }
