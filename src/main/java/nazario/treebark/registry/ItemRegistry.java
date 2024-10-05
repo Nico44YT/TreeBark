@@ -7,6 +7,7 @@ import nazario.liby.registry.helper.LibyItemRegister;
 import nazario.treebark.Treebark;
 import nazario.treebark.item.BarkItem;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -44,6 +45,9 @@ public class ItemRegistry {
         ITEM_GROUP.builder.displayName(Text.translatable("itemGroup.treebark.bark_tab"));
 
         ITEM_GROUP_REGISTER.registerItemGroup(ITEM_GROUP);
+
+        FuelRegistry fuelRegistry = FuelRegistry.INSTANCE;
+        BARK_LIST.forEach(bark -> fuelRegistry.add(bark, 40));
     }
 
     public static void addBark(Item... items) {
