@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "treebark",
+  "version": "${version}",
+  "name": "TreeBark",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/treebark/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "nazario.treebark.client.TreebarkClient"
+    ],
+    "main": [
+      "nazario.treebark.Treebark"
+    ]
+  },
+  "mixins": [
+    "treebark.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
