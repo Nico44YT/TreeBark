@@ -3,15 +3,19 @@
   "id": "treebark",
   "version": "${version}",
   "name": "TreeBark",
-  "description": "",
-  "authors": [],
-  "contact": {},
+  "description": "TreeBark adds bark for all vanilla trees",
+  "contact": {
+    "homepage": "https://nico44yt.github.io/",
+    "issues": "https://github.com/Nico44YT/TreeBark/issues"
+  },
+  "authors": [
+    "Nico_44"
+  ],
   "license": "GPL-3.0",
   "icon": "assets/treebark/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "nazario.treebark.client.TreebarkClient"
     ],
     "main": [
       "nazario.treebark.Treebark"
@@ -25,5 +29,13 @@
     "fabric": "*",
     "minecraft": "${minecraft_version}",
     "liby": ">=${liby_version}"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.source": "https://github.com/Nico44YT/TreeBark/"
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
-package nazario.treebark.mixins;
+package nazario.treebark.mixin;
 
 import nazario.treebark.item.BarkItem;
+import nazario.treebark.registry.ItemRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -8,6 +9,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -28,11 +31,13 @@ public abstract class AxeItemMixin {
         if(player != null) itemEntity.setPosition(player.raycast(8, 0, false).getPos());
         if(player != null || itemEntity.getPos() == null) itemEntity.setPosition(pos.toCenterPos());
 
-        for(Item item : nazario.treebark.registry.ItemRegistry.BARK_LIST) {
+        for(Item item : ItemRegistry.itemMap.values()) {
             if(item instanceof BarkItem barkItem) {
-                if(barkItem.barkMap.containsValue(state.getBlock())) {
-                    itemEntity.setStack(new ItemStack(barkItem));
-                    break;
+                for(Identifier identifier : barkItem.reference.map.values()) {
+                    if(Registries.BLOCK.get(identifier).equals(state.getBlock())) {
+                        itemEntity.setStack(new ItemStack(barkItem));
+                        break;
+                    }
                 }
             }
         }
