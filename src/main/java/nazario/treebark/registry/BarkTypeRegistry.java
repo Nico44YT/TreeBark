@@ -47,7 +47,7 @@ public class BarkTypeRegistry {
         OAK_BLOCKS.put(Blocks.STRIPPED_OAK_LOG, Blocks.OAK_LOG);
         OAK_BLOCKS.put(Blocks.STRIPPED_OAK_WOOD, Blocks.OAK_WOOD);
 
-        SPRUCE_BLOCKS.put(Blocks.STRIPPED_SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG);
+        SPRUCE_BLOCKS.put(Blocks.STRIPPED_SPRUCE_LOG, Blocks.SPRUCE_LOG);
         SPRUCE_BLOCKS.put(Blocks.STRIPPED_SPRUCE_WOOD, Blocks.SPRUCE_WOOD);
 
         WARPED_BLOCKS.put(Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_STEM);
